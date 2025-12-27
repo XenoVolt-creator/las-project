@@ -1,0 +1,658 @@
+/* 1. Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 2. Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%; 
+    background-color: #fff;
+    position: relative;
+    z-index: 100;
+}
+
+.logo img { 
+    height: 60px; 
+    display: block; 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+}
+
+.nav-links li { 
+    margin-left: 20px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #a31e22; 
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* 3. Banner & Collage */
+.banner-wrapper {
+    max-width: 1200px; 
+    margin: 0 auto 120px auto;
+    position: relative;
+}
+
+.hero-banner {
+    width: 100%;
+    height: 450px; 
+    /* Updated path to images/ */
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('images/IDVIG-slider.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+/* Floating Images Logic */
+.float-img {
+    position: absolute;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.float-img img {
+    display: block; 
+    width: 100%; 
+    height: auto;
+    border: 1px solid #fff;
+    filter: grayscale(100%);
+    transition: 0.4s ease;
+}
+
+.float-img:hover img {
+    filter: grayscale(0%);
+}
+
+.img-left { width: 240px; left: -40px; top: 100px; }
+.img-right { width: 240px; right: -40px; top: 100px; }
+.img-bottom-left { width: 200px; left: 120px; bottom: -60px; }
+.img-bottom-center { width: 220px; left: 42%; bottom: -80px; }
+.img-bottom-right { width: 220px; right: 120px; bottom: -70px; }
+
+/* 4. Why Choose Section */
+.why-choose-section { 
+    padding: 80px 0; 
+    background-color: #fff; 
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.info-row { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 50px; 
+    margin-bottom: 50px; 
+}
+
+.main-title { 
+    color: #a31e22; 
+    font-size: 32px; 
+    line-height: 1.2; 
+    flex: 1; 
+}
+
+.features-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px 30px; 
+    flex: 2; 
+}
+
+.feature-item { 
+    display: flex; 
+    gap: 15px; 
+    align-items: flex-start; 
+}
+
+.feature-icon-img {
+    width: 35px; 
+    height: 35px;
+    object-fit: contain; 
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.feature-text h3 { 
+    font-size: 14px; 
+    color: #333; 
+    margin-bottom: 5px; 
+    font-weight: bold;
+}
+
+.feature-text p { 
+    font-size: 13px; 
+    color: #666; 
+    line-height: 1.5; 
+}
+
+/* 5. Program Cards */
+.program-cards { 
+    display: flex; 
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1; 
+    height: 380px; 
+    border-radius: 12px;
+    position: relative; 
+    overflow: hidden;
+    background: #ccc center/cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Updated paths to images/ */
+.card-school { background-image: url('images/tbkfX-img12.png'); }
+.card-boarding { background-image: url('images/Hkh95-img11.png'); }
+.card-plus2 { background-image: url('images/c1SJ0-1.jpeg'); }
+
+.card-text {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    padding: 25px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85)); 
+    color: #fff;
+}
+
+.card-text h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.card-text p {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* 6. LA in a Glimpse Section */
+.glimpse-section {
+    padding: 100px 0;
+    background-color: #f8f8f8; 
+    text-align: center;
+}
+
+.glimpse-title {
+    color: #a31e22;
+    font-size: 28px;
+    margin-bottom: 80px;
+    font-weight: bold;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 110px; 
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background-color: #a31e22;
+    z-index: 1;
+}
+
+.timeline-items {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2; 
+}
+
+.timeline-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-frame {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #a31e22;
+    background-color: #fff;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.circle-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timeline-text h4 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.timeline-text p {
+    color: #777;
+    font-size: 13px;
+    max-width: 200px;
+    line-height: 1.4;
+}
+
+/* Arrow Masks (Using Data URIs, so no folder path needed here) */
+.timeline-item:nth-child(2)::before,
+.timeline-item:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 110px; 
+    width: 20px;
+    height: 20px;
+    background-color: #a31e22;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>') no-repeat center;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>') no-repeat center;
+    z-index: 5;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(2)::before {
+    left: 20px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.timeline-item:nth-child(2)::after {
+    right: 20px;
+}
+
+/* 7. Valued Voices Section */
+.valued-voices {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    color: #a31e22;
+    font-size: 28px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.voice-cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.voice-card {
+    flex: 1;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.voice-card:hover {
+    transform: translateY(-5px);
+}
+
+.voice-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.voice-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    display: flex;
+    align-items: flex-end;
+    padding: 30px 20px;
+}
+
+.voice-overlay h3 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+/* 8. Connect with Us Section */
+.connect-section {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.connect-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.connect-card {
+    flex: 1;
+    height: 380px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.connect-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.connect-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.connect-card:hover img {
+    transform: scale(1.1);
+}
+
+.connect-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.connect-overlay h3 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* 9. Pre-Footer Link Boxes */
+.pre-footer {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.footer-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.footer-box {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fcfcfc;
+    min-height: 280px;
+}
+
+.footer-box-header {
+    background-color: #d12026; 
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-box-links {
+    list-style: none;
+    padding: 10px 20px;
+}
+
+.footer-box-links li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.footer-box-links li:last-child {
+    border-bottom: none;
+}
+
+.footer-box-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.footer-box-links a::before {
+    content: '›';
+    margin-right: 10px;
+    color: #d12026;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-box-links a:hover {
+    color: #d12026;
+}
+
+/* 10. Main Footer */
+.main-footer {
+    padding: 60px 0 30px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    gap: 25px;
+    max-width: 400px;
+}
+
+.footer-logo {
+    height: 80px;
+}
+
+.contact-info strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+}
+
+.footer-nav a:hover {
+    color: #d12026;
+    text-decoration: underline;
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #999;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+    transition: 0.3s;
+}
+
+.social-links a:hover img {
+    transform: translateY(-3px);
+}
+
+/* 11. About Us Page Styles */
+.about-hero {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/IDVIG-slider.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.about-section {
+    padding: 80px 0;
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text { flex: 1; }
+.about-image { flex: 1; }
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.philosophy-list {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.philosophy-list li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.philosophy-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #a31e22;
+    font-weight: bold;
+}
+
+.principal-section {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+}
+
+.principal-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    gap: 40px;
+}
+
+.principal-img-container img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #a31e22;
+}
+
+.nav-links a.active {
+    color: #000;
+    border-bottom: 2px solid #a31e22;
+}
